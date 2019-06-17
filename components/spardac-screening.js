@@ -13,7 +13,7 @@
         "recruitment-data":    	        {url:"$H/elig-questions-data.html",Table:"dev-spardac-recruitment-record",form_module:"recruitment-form",router:1},
         "recruitment-form":    	        {url:"$H/elig-questions-form.html",Table:"dev-spardac-recruitment-record"},
     }
-    url_replace(modules,"","$H","https://wappsystem.github.io/spardac-screening/modules","http://127.0.0.1:8000/wappsystem/spardac-screening/modules");
+    url_replace(modules,"","$H","https://wappsystem.spardac-screening.com.au/modules","http://127.0.0.1:8000/wappsystem/spardac-screening/modules");
     //-------------------------------------------------------------------------------------
     for(m in modules){$vm.module_list[m]=modules[m];}
 })();
