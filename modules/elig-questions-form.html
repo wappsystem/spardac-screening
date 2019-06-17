@@ -66,7 +66,12 @@
                             </fieldset>
                         </div>
                     </div>
+                    <div style="text-align:right">
+                        <button type="submit" d=1 style="border-radius:2rem;background-color: #13B51F;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Next</button>
+                    </div>
                 </div>
+            </div>
+            <div id=S2__ID>
                 <div id=page2__ID class="row  mr-0 ml-0 p-4" style="background-color:#efefef;">
                     <div class="col-lg-1 col-sm-0 ">
                     </div>
@@ -232,7 +237,7 @@
                     </div>
                 </div>
             </div>
-            <div id=S2__ID>
+            <div id=S3__ID>
                 <div class="row mr-0 ml-0 p-3" style="background-color:#efefef;" >
                     <div class="col-lg-4 col-sm-0 text-center"></div>
                     <div class="col-lg-4 col-sm-12 text-center">
@@ -283,7 +288,7 @@
                         Contact Us
                         <br><br>
                         Phone: (02) 9876 5432<br>
-                        Email: aaaaaaa@bbbbbb.edu.au<br><br>
+                        Email: aaa.bbb@cccc.edu.au<br><br>
                         Thanks you for your time and effort,<br>
                         <b>The Spardac Research Team</b><br>
                     </div>
@@ -295,7 +300,7 @@
         function F__ID() {
             VmInclude: __COMPONENT__/f/form.01.js
             //---------------------------------------
-            var N = 2;
+            var N = 3;
             var current_I = 1;
             //---------------------------------------
             m.before_submit = function (data, index) {
@@ -316,7 +321,7 @@
                 event.preventDefault();
                 if (current_I == N-1) {
                     var isi=(parseInt($("#D__ID input[name=ISI_2]:checked").val())+parseInt($("#D__ID input[name=ISI_3]:checked").val())+parseInt($("#D__ID input[name=ISI_4]:checked").val())+parseInt($("#D__ID input[name=ISI_5]:checked").val())+parseInt($("#D__ID input[name=ISI_1a]:checked").val())+parseInt($("#D__ID input[name=ISI_1b]:checked").val())+parseInt($("#D__ID input[name=ISI_1c]:checked").val())).toString();
-                    if($("input[name='location']:checked").val()=='N' || $("input[name='age']:checked").val()=='N' || $("input[name='english']:checked").val()=='N' || $("input[name='shift']:checked").val()=='Y' || $("input[name='sleepstudy']:checked").val()=='N' || isi<15 ) {
+                    if($("input[name='location']:checked").val()=='N' || $("input[name='age']:checked").val()=='N' || $("input[name='english']:checked").val()=='N' || isi<=10 ) {
                         $('#F__ID *').removeAttr('disabled');
                         old_submit(event);
                         if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
