@@ -1,0 +1,63 @@
+<div id=D__ID>
+	<div class='text-center' style='max-width:800px;margin-left:auto;margin-right:auto;'>
+		<img style="width:100%" src="components/images/logo_large.png"><br><br>
+		<h5>Welcome to the Spardac Research Study</h5>
+		We invite you to participate in an exciting new research study.
+		<br><br>
+		<h5>Eligibility</h5>
+		You may be eligible to participate in this study if you:<br>
+		•	Live in Australia<br>
+		•	Are aged 20 to 60 years<br><br>
+		Et graeco nusquam pri, assum fastidii est ea. Zril aperiri detraxit et vis. Ei mea velit graecis fabellas, vero principes ne sed. Consul ancillae appareat mea ei, ei error iuvaret indoctum per. Vocent constituto quaerendum eam an, pri ei sint latine.<br><br>
+		<h5>I agree on completing a number of screening questionnaires to determine if I am suitable for the study:</h5>
+		
+		<br>
+		<button id="yes__ID"  class="btn btn-success btn-lg">I agree</button>
+		<br><br>
+		This study has received ethical approval from XXXXXXXX Ethics Committee (Ethics ID: ???????????))<br><br>
+		If you have any questions, please contact us on aaaaaaa@bbbbbb.edu.au or 02 9876 5432<br><br>
+	</div>
+	<script>
+		function F__ID(){
+			var m=$vm.module_list['__MODULE__'];
+			if(m.prefix==undefined) m.prefix="";
+			$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'recruitment-form','',{});	})
+		}
+		$vm.home_ready=1;
+	</script>
+	<style>
+		#D__ID{
+			font-family: 'Roboto Slab';
+			height:100%;
+			animation: vm_module_fadein 1.0s;
+	        padding-bottom:5%;
+			margin-top:-100px;
+			padding-top:80px;
+			color:darkblue;
+		}
+		#yes__ID{
+			border-radius:2rem;
+			background-color: darkolivegreen;
+			width:180px;height:60px;
+			font-family: Arial, Helvetica, sans-serif
+		}
+		#no__ID{
+			border-radius:2rem;
+			width:180px;
+			height:60px;
+			font-size:1.2rem;
+			font-family: Arial, Helvetica, sans-serif;
+			border-width: 2px;
+			border-color: #fff;
+			color:#fff;
+		}
+		#no__ID:hover{
+			background-color: rgb(0,0,0,0);
+		}
+	    @media screen and (max-width: 992px) {
+	        #D__ID{
+	            animation: vm_module_fadein 1.0s;
+	        }
+	    }
+	</style>
+</div>
