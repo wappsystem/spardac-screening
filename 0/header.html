@@ -23,7 +23,7 @@
             top:0;
             left:0;
             width:100%;
-            background:rgba(0,0,0,0.6);
+            background:rgba(0,0,0,0);
             z-index:10;
         }
         .vm-desk-logo{float:left;padding:0;cursor:pointer;}
@@ -50,7 +50,7 @@
             width:360px;
             height:70px;
             margin:15px 0 0 20px;
-            background: url('__CURRENT_PATH__/../components/images/logo_large.png') no-repeat top center;
+            background: url('__CURRENT_PATH__/../images/logo_large.png') no-repeat top center;
             background-size: cover;
             /*float:left;*/
             cursor:pointer;
@@ -60,7 +60,7 @@
             width:330px;
             height:80px;
             margin:15px 0 0 20px;
-            background: url('__CURRENT_PATH__/../components/images/logo_small.png') no-repeat top center;
+            background: url('__CURRENT_PATH__/../images/logo_small.png') no-repeat top center;
             background-size: cover;
             /*float:left;*/
             cursor:pointer;
@@ -154,15 +154,16 @@
         .vm-mobile{
             display:none;
         }
-        #header{ background-image: url("https://images.unsplash.com/photo-1497211419994-14ae40a3c7a3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&h=100&fit=crop&ixid=eyJhcHBfaWQiOjF9");
-            opacity: 0.8;}
+        #header{ background-image: url("https://images.unsplash.com/photo-1563717858774-38329f6243de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&h=100&fit=crop&ixid=eyJhcHBfaWQiOjF9");
+            opacity: 0;}                 
         /*----------------------*/
         @media screen and (max-width: 1200px) {
             .vm-mobile{
                 display:block;
             }
             #header{ 
-                background-image: url("https://images.unsplash.com/photo-1497211419994-14ae40a3c7a3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=733&h=133&fit=crop&ixid=eyJhcHBfaWQiOjF9");
+                background-image: url("https://images.unsplash.com/photo-1563717858774-38329f6243de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=733&h=133&fit=crop&ixid=eyJhcHBfaWQiOjF9");
+                opacity: 0;}                 
              }
             .vm-mobile-title{
                 color:var(--mobile-title-color);
