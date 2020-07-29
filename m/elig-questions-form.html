@@ -242,64 +242,21 @@
                     <div class="col">
                             Thank you for completing these questions. Based on the responses you have provided, you may be
                             eligible for the research study.<br><br>
-                            We will need to contact you to discuss this over the telephone. Please provide your phone number
-                            and e-mail address and we will contact you shortly.
                     </div>
                 </div>
-                <div id=page2__ID class="row  mr-0 ml-0 p-4 rounded" style="background-color:#bdb016;">
-                    <div class="col-lg-1 col-sm-0 ">
-                    </div>
-                    <div class="col-lg-10 col-sm-12 text-center">
-                        <span style="color:#888"></span> <b>Contact Details</b>
-                    </div>
-                    <div class="col-lg-1 col-sm-0 ">
-                    </div>
-                </div>        
                 <div style='max-width:800px;margin-left:auto;margin-right:auto;'>
-                    <div class="form-group">
-                        <div class="questiongroup ">
-                            <fieldset class="subquestions">
-                                <label><span class="">First name</span>
-                                      <input class="form-control" type="text" name="first_name" >
-                                </label><br>
-                                <label><span class="">Last name</span>
-                                      <input class="form-control" type="text" name="last_name" >
-                                </label><br>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="questiongroup ">
-                            <fieldset class="subquestions">
-                                <label style="width:100%"><span class="">Email Address</span>
-                                    <input class="form-control" type="email" name="email" >
-                                </label><br>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="questiongroup ">
-                            <fieldset class="subquestions">
-                                <label><span class="">Phone number</span>
-                                    <input type="tel" class="form-control" name="phone" id="mobileNumber__ID" required placeholder="XXXX-XXX-XXX" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}">
-                                </label><br>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div style="text-align:right">
-                        <button type="submit" id=submit1__ID d=1 style="border-radius:2rem;background-color: #13B51F;width:180px;height:60px;font-family: Arial, Helvetica, sans-serif" class="btn btn-success btn-lg">Submit</button>
-                    </div>
-                    <br>
                     <hr>
                     <div class="text-center">
-                        Contact Us
+                        Please contact us
                         <br><br>
                         Phone: (02) 9876 5432<br>
                         Email: aaa.bbb@cccc.edu.au<br><br>
+                        Your reference number is <span style='font-size:1.5rem;font-weight:bold;' id=refnum__ID></span>.<br><br>
                         Thanks you for your time and effort,<br>
                         <b>The Spardac Research Team</b><br>
                     </div>
                 </div>
+                <div style='display:none'><input name=Eligible type=text></div>
             </div>
         </form>
     </div>
@@ -330,24 +287,32 @@
                     var isi=(parseInt($("#D__ID input[name=ISI_2]:checked").val())+parseInt($("#D__ID input[name=ISI_3]:checked").val())+parseInt($("#D__ID input[name=ISI_4]:checked").val())+parseInt($("#D__ID input[name=ISI_5]:checked").val())+parseInt($("#D__ID input[name=ISI_1a]:checked").val())+parseInt($("#D__ID input[name=ISI_1b]:checked").val())+parseInt($("#D__ID input[name=ISI_1c]:checked").val())).toString();
                     if($("input[name='location']:checked").val()=='N' || $("input[name='age']:checked").val()=='N' || $("input[name='english']:checked").val()=='N' || isi<=10 ) {
                         $('#F__ID *').removeAttr('disabled');
+                        $("#F__ID input[name=Eligible]").val("No")
                         old_submit(event);
                         if(m.prefix==undefined) {$vm.load_module('not_elig','',{});}
                         else $vm.load_module(m.prefix+'not_elig','',{});
                     }
                     else {
                         show_section(current_I + 1);
-                        $("input[name='first_name']").prop('required','true')
-                        $("input[name='last_name']").prop('required','true')
-                        $("input[name='email']").prop('required','true')
-                        $("input[name='phone']").prop('required','true')
+                        $('#F__ID *').removeAttr('disabled');
+                        $("#F__ID input[name=Eligible]").val("Yes")
+                        old_submit(event);
+                        //$("input[name='first_name']").prop('required','true')
+                        //$("input[name='last_name']").prop('required','true')
+                        //$("input[name='email']").prop('required','true')
+                        //$("input[name='phone']").prop('required','true')
                     }
                 }
                 else if (current_I == N) {
                     $('#F__ID *').removeAttr('disabled');
                     $('#submit1__ID').hide();
-                    old_submit(event);
+                    //old_submit(event);
                 }
                 else show_section(current_I + 1);
+            }
+            //---------------------------------------
+            m.after_insert = function (data,index) {
+                $('#refnum__ID').text(index.result.ops[0].UID)
             }
             //---------------------------------------
             $('#D__ID').on('load', function () {
